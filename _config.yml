@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Xunpeng Huang"
 title_separator          : "-"
 name                     : &name "Xunpeng Huang"
-description              : &description "Algorithm engineer in Bytedance AI Lab"
+description              : &description "Algorithm engineer at Bytedance AI Lab"
 url                      : https://Xunpeng746.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "Xunpeng746.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Xunpeng Huang"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
+  bio              : "Algorithm engineer at Bytedance AI Lab"
   location         : "Shanghai, China"
   employer         :
   pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
