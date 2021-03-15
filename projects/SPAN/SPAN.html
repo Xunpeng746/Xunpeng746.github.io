@@ -3,7 +3,7 @@
 <html lang="en"><!-- === Header Starts === --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
 
-  <title>ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization</title>
+  <title>SPAN: A Stochastic Projected Approximate Newton Method</title>
 
   <link href="../assets/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/font.css" rel="stylesheet" type="text/css">
@@ -20,31 +20,31 @@
   <!-- === Title Starts === -->
   <div class="header">
     <div class="title" ,="" style="padding-top: 25pt;">  <!-- Set padding as 10 if title is with two lines. -->
-      ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization
+        SPAN: A Stochastic Projected Approximate Newton Method
     </div>
   </div>
   <!-- === Title Ends === -->
   <div class="author">
       <a href="https://xunpeng746.github.io/">Xunpeng Huang</a><sup>1</sup>,&nbsp;
-    <a href="https://runxinxu.github.io/">Runxin Xu</a><sup>1,4</sup>,&nbsp;
-    <a href="https://zhouh.github.io/">Hao Zhou</a><sup>1</sup>,&nbsp;
-      <a href="https://scholar.google.com/citations?user=DkcabN8AAAAJ&hl=en">Zhe Wang</a><sup>2</sup>,&nbsp;
-      <a href="https://lozycs.github.io/">Zhengyang Liu</a><sup>3</sup>,&nbsp;
+    <a href="https://scholar.google.com/citations?user=ELd7NkgAAAAJ&hl=en">Xianfeng Liang</a><sup>2</sup>,&nbsp;
+    <a href="https://lozycs.github.io/">Zhengyang Liu</a><sup>1</sup>,&nbsp;
+      <a href="https://scholar.google.com/citations?hl=en&user=3nzv7wcAAAAJ&view_op=list_works&sortby=pubdate">Yitan Li</a><sup>1</sup>,<br>
+      <a href="https://scholar.google.com/citations?hl=en&user=-sdzd9EAAAAJ&view_op=list_works&sortby=pubdate">Linyun Yu</a><sup>1</sup>,&nbsp
+      <a href="https://iiis.tsinghua.edu.cn/en/yuyue/">Yue Yu</a><sup>3</sup>,&nbsp;
       <a href="https://lileicc.github.io/">Lei Li</a><sup>1</sup>
   </div>
   <div class="institution">
       <sup>1</sup>ByteDance AI Lab,&nbsp;&nbsp;&nbsp;
-      <sup>2</sup>The Ohio State University,</br>
-      <sup>3</sup>Beijing Institute of Technology,&nbsp;&nbsp;&nbsp;
-      <sup>4</sup>Peking University
+      <sup>2</sup>University of Science and Technology of China,</br>
+      <sup>3</sup>Tsinghua University
   </div>
   <div class="link">
-    <a href="https://arxiv.org/abs/2006.07065">[Paper]</a>&nbsp;
-    <a href="https://github.com/Xunpeng746/ACMo">[Code]</a>
+    <a href="https://arxiv.org/abs/2002.03687">[Paper]</a>&nbsp;
+    <a href="https://github.com/Xunpeng746/SPAN">[Code]</a>
   </div>
   
   <div style="text-align: center; ">
-    <img src="./Fig/ACMo_intuition.png" width="60%">
+    <img src="./Fig/SPAN_intuition.png" width="60%">
   </div>
 
 </div>
@@ -55,7 +55,7 @@
 <div class="section">
   <div class="title">Overview</div>
   <div class="body">
-    Angle-Calibration Moment method (ACMo) is a novel stochastic optimization method enjoying the benefits of second moments with only first moment updates. Different from previous adaptive gradient methods (AGMs), ACMo has robust tier-1 performances in both image classification and neural machine translation tasks without over-designed iteration paradigms. This is achieved by: (a) understanding the geometric properties of second moments in Adam-type optimizers and (b) replacing the projection penalty in the AdGrad's proximal subproblem to a inner-product regularization.
+    Stochastic Projected Approximate Newton (SPAN) is a novel approximate and fast Newton method for minimizing general convex/strongly convex objective functions. Different from previous second-order methods, SPAN can both prevent from calculating exact Hessian matrices and control the error between approximate and exact Hessian. This is achieved by (a) the introduction of randomized low rank approximation and (b) the scant equation of objective functions. SPAN not only provide a improved theoretical complexity but also the SOTA emperical performances in some tasks.
   </div>
 </div>
 <!-- === Overview Section Ends === -->
@@ -67,19 +67,28 @@
   <div class="body">
       <div class="subsection">
         <div class="subtitle">Emperical Results</div>
-        Image classification tasks:</br>
+        Binary image classification tasks (MNIST 4-9):</br>
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="./Fig/ic_task.png" width="80%"></br>
+          <img src="./Fig/SPAN_time.png" width="100%"></br>
         </div>
-        Neural machine translation tasks:</br>
+        Hessian approximation error:</br>
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="./Fig/nmt_task.png" width="80%">
+          <img src="./Fig/SPAN_Hessian_error.png" width="100%">
+        </div>
+        Convergence rates in different batch sizes:</br>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="./Fig/SPAN_iteration_convergence.png" width="100%">
         </div>
       </div>
       <div class="subsection">
         <div class="subtitle">Theoretical Results</div>
+        Iteration complexity:</br>
         <div style="text-align: center; margin-bottom: 20px;">
-          <img src="./Fig/convergence_theorem.png" width="50%">
+          <img src="./Fig/SPAN_iteration_complexity.png" width="100%">
+        </div>
+        Convergence rate of SPAN:</br>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="./Fig/SPAN_convergence_rate.png" width="90%">
         </div>
       </div>
 <!--      -->
@@ -99,12 +108,15 @@
 <!-- === Reference Section Starts === -->
 <div class="section">
   <div class="bibtex">BibTeX</div>
-<pre>@inproceedings{huang2021acmo,
-  title={ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization},
-  author={Xunpeng Huang, Runxin Xu, Hao Zhou, Zhe Wang, Zhengyang Liu, Lei Li},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  year={2021}
-}
+<pre>@inproceedings{huang2020span,
+    title={SPAN: A Stochastic Projected Approximate Newton Method},
+    author={Huang, Xunpeng and Liang, Xianfeng and Liu, Zhengyang and Li, Lei and Yu, Yue and Li, Yitan},
+    booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume={34},
+    number={02},
+    pages={1520--1527},
+    year={2020}
+  }
 
 </pre>
 
