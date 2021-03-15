@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://Xunpeng746.github.io/projects/ACMo/ -->
+<html lang="en"><!-- === Header Starts === --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+
+  <title>ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization</title>
+
+  <link href="../assets/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/font.css" rel="stylesheet" type="text/css">
+  <link href="../assets/style.css" rel="stylesheet" type="text/css">
+</head>
+<!-- === Header Ends === -->
+
+
+<body data-new-gr-c-s-check-loaded="14.998.0" data-gr-ext-installed="">
+
+
+<!-- === Home Section Starts === -->
+<div class="section">
+  <!-- === Title Starts === -->
+  <div class="header">
+    <div class="title" ,="" style="padding-top: 25pt;">  <!-- Set padding as 10 if title is with two lines. -->
+      ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization
+    </div>
+  </div>
+  <!-- === Title Ends === -->
+  <div class="author">
+      <a href="https://xunpeng746.github.io/">Xunpeng Huang</a><sup>1</sup>,&nbsp;
+    <a href="https://runxinxu.github.io/">Runxin Xu</a><sup>1,4</sup>,&nbsp;
+    <a href="https://zhouh.github.io/">Hao Zhou</a><sup>1</sup>,&nbsp;
+      <a href="https://scholar.google.com/citations?user=DkcabN8AAAAJ&hl=en">Zhe Wang</a><sup>2</sup>,&nbsp;
+      <a href="https://lozycs.github.io/">Zhengyang Liu</a><sup>3</sup>,&nbsp;
+      <a href="https://lileicc.github.io/">Lei Li</a><sup>1</sup>
+  </div>
+  <div class="institution">
+      <sup>1</sup>ByteDance AI Lab,&nbsp;&nbsp;&nbsp;
+      <sup>2</sup>The Ohio State University,</br>
+      <sup>3</sup>Beijing Institute of Technology,&nbsp;&nbsp;&nbsp;
+      <sup>4</sup>Peking University
+  </div>
+  <div class="link">
+    <a href="https://arxiv.org/abs/2006.07065">[Paper]</a>&nbsp;
+    <a href="https://github.com/Xunpeng746/ACMo">[Code]</a>
+  </div>
+  
+  <div style="text-align: center; ">
+    <img src="./Fig/ACMo_intuition.png" width="60%">
+  </div>
+
+</div>
+<!-- === Home Section Ends === -->
+
+
+<!-- === Overview Section Starts === -->
+<div class="section">
+  <div class="title">Overview</div>
+  <div class="body">
+    Angle-Calibration Moment method (ACMo) is a novel stochastic optimization method enjoying the benefits of second moments with only first moment updates. Different from previous adaptive gradient methods (AGMs), ACMo has robust tier-1 performances in both image classification and neural machine translation tasks without over-designed iteration paradigms. This is achieved by: (a) understanding the geometric properties of second moments in Adam-type optimizers and (b) replacing the projection penalty in the AdGrad's proximal subproblem to a inner-product regularization.
+  </div>
+</div>
+<!-- === Overview Section Ends === -->
+
+
+<!-- === Result Section Starts === -->
+<div class="section">
+  <div class="title">Results</div>
+  <div class="body">
+      <div class="subsection">
+        <div class="subtitle">Emperical Results</div>
+        Image classification tasks:</br>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="./Fig/ic_task.png" width="80%"></br>
+        </div>
+        Neural machine translation tasks:</br>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="./Fig/nmt_task.png" width="80%">
+        </div>
+      </div>
+      <div class="subsection">
+        <div class="subtitle">Theoretical Results</div>
+        <div style="text-align: center; margin-bottom: 20px;">
+          <img src="./Fig/convergence_theorem.png" width="80%">
+        </div>
+      </div>
+<!--      -->
+<!--    Demo video here.-->
+<!--    &lt;!&ndash; Adjust the frame size based on the demo (EVERY project differs). &ndash;&gt;-->
+<!--    <div style="position: relative; padding-top: 50%; margin: 20pt 0; text-align: center;">-->
+<!--      <iframe src="https://via.placeholder.com/900x450" frameborder=0-->
+<!--              style="position: absolute; top: 2.5%; left: 2.5%; width: 95%; height: 100%;"-->
+<!--              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--              allowfullscreen></iframe>-->
+<!--    </div>-->
+<!--  </div>-->
+</div>
+<!-- === Result Section Ends === -->
+
+
+<!-- === Reference Section Starts === -->
+<div class="section">
+  <div class="bibtex">BibTeX</div>
+<pre>@inproceedings{huang2021acmo,
+  title= {ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization},
+  author= {Xunpeng Huang, Runxin Xu, Hao Zhou, Zhe Wang, Zhengyang Liu, Lei Li},
+  booktitle = {Proceedings of the 34th AAAI Conference on Artificial Intelligence (AAAI'21)},
+  year= {2021}
+}
+
+</pre>
+
+
+</div></div></body></html>
