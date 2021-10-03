@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Xunpeng Huang's Homepage # the website title (if blank, full name will be used instead)
+title: # the website title (if blank, full name will be used instead)
 first_name: Xunpeng
 middle_name: 
 last_name: Huang
@@ -15,7 +15,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 
-icon: # the emoji used as the favicon
+icon: 🎓 # the emoji used as the favicon
 url:     # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
@@ -68,7 +68,7 @@ dblp_url: # your DBLP profile url
 stackoverflow_id: #your stackoverflow id
 
 contact_note: >
-  Contact me with e-mail.
+  You can reach me by email.
 
 google_analytics:  # out your google-analytics code
 panelbear_analytics:  # panelbear analytics site ID
@@ -99,9 +99,9 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
-  projects:
-    output: false
-    permalink: /projects/:path/
+  #projects:
+  #  output: false
+  #  permalink: /projects/:path/
 
 news_limit: 5
 
