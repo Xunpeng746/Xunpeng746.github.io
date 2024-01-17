@@ -3,6 +3,55 @@
 
 @string{aps = {American Physical Society,}}
 
+@misc{huang2024faster,
+      title={Faster Sampling without Isoperimetry via Diffusion-based Monte Carlo}, 
+      author={Xunpeng Huang and Difan Zou and Hanze Dong and Yian Ma and Tong Zhang},
+      year={2024},
+      eprint={2401.06325},
+      archivePrefix={arXiv},
+      primaryClass={stat.ML}
+}
+
+@inproceedings{huang2024reverse,
+  abbr={ICLR},
+  bibtex_show={true},
+  title={Reverse Diffusion Monte Carlo},
+  author={Xunpeng Huang, Hanze Dong, Yifan HAO, Yian Ma, Tong Zhang},
+  abstract={The efficacy of modern generative models is commonly contingent upon the precision of score estimation along the diffusion path, with a focus on diffusion models and their ability to generate high-quality data samples. This study delves into the application of reverse diffusion to Monte Carlo sampling. It is shown that score estimation can be transformed into a mean estimation problem via the decomposition of the transition kernel. By estimating the mean of the posterior distribution, we derive a novel Monte Carlo sampling algorithm from the reverse diffusion process, which is distinct from traditional Markov Chain Monte Carlo (MCMC) methods. We calculate the error requirements and sample size for the posterior distribution, and use the result to derive an algorithm that can approximate the target distribution to any desired accuracy. Additionally, by estimating the log-Sobolev constant of the posterior distribution, we show under suitable conditions the problem of sampling from the posterior can be easier than direct sampling from the target distribution using traditional MCMC techniques. For Gaussian mixture models, we demonstrate that the new algorithm achieves significant improvement over the traditional Langevin-style MCMC sampling methods both theoretically and practically. Our algorithm offers a new perspective and solution beyond classical MCMC algorithms for challenging complex distributions.},
+  year={2024},
+  html={https://openreview.net/forum?id=kIPEyMSdFV},
+  selected={true}
+}
+
+@inproceedings{huang2021acmo,
+  abbr={AAAI},
+  bibtex_show={true},
+  title={ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization},
+  author={Huang, Xunpeng and Xu, Runxin and Zhou, Hao and Wang, Zhe and Liu, Zhengyang and Li, Lei},
+  abstract={Stochastic gradient descent (SGD) is a widely used method for its outstanding generalization ability and simplicity. Adaptive gradient methods have been proposed to further accelerate the optimization process. In this paper, we revisit existing adaptive gradient optimization methods with a new interpretation. Such new perspective leads to a refreshed understanding of the roles of second moments in stochastic optimization. Based on this, we propose Angle-Calibration Moment method (ACMo), a novel stochastic optimization method. It enjoys the benefits of second moments with only first moment updates. Theoretical analysis shows that ACMo is able to achieve the same convergence rate as mainstream adaptive methods. Experiments on a variety of CV and NLP tasks demonstrate that ACMo has a comparable convergence to state-of-the-art Adam-type optimizers, and even a better generalization performance in most cases. The code is available at https://github.com/Xunpeng746/ACMo.},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={35},
+  number={9},
+  pages={7857--7864},
+  year={2021},
+  html={https://ojs.aaai.org/index.php/AAAI/article/view/16959}
+}
+
+@inproceedings{huang2020span,
+  abbr={AAAI},
+  bibtex_show={true},
+  title={Span: A stochastic projected approximate newton method},
+  author={Huang, Xunpeng and Liang, Xianfeng and Liu, Zhengyang and Li, Lei and Yu, Yue and Li, Yitan},
+  abstract={Second-order optimization methods have desirable convergence properties. However, the exact Newton method requires expensive computation for the Hessian and its inverse. In this paper, we propose SPAN, a novel approximate and fast Newton method. SPAN computes the inverse of the Hessian matrix via low-rank approximation and stochastic Hessian-vector products. Our experiments on multiple benchmark datasets demonstrate that SPAN outperforms existing first-order and second-order optimization methods in terms of the convergence wall-clock time. Furthermore, we provide a theoretical analysis of the per-iteration complexity, the approximation error, and the convergence rate. Both the theoretical analysis and experimental results show that our proposed method achieves a better trade-off between the convergence rate and the per-iteration efficiency.},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={34},
+  number={02},
+  pages={1520--1527},
+  year={2020},
+  html={https://ojs.aaai.org/index.php/AAAI/article/view/5511},
+  selected={true}
+}
+
 @article{zhang2018finding,
   abbr={Inf. Sci},
   bibtex_show={true},
@@ -50,32 +99,6 @@
   organization={Springer}
 }
 
-@inproceedings{huang2020span,
-  abbr={AAAI},
-  bibtex_show={true},
-  title={Span: A stochastic projected approximate newton method},
-  author={Huang, Xunpeng and Liang, Xianfeng and Liu, Zhengyang and Li, Lei and Yu, Yue and Li, Yitan},
-  abstract={Second-order optimization methods have desirable convergence properties. However, the exact Newton method requires expensive computation for the Hessian and its inverse. In this paper, we propose SPAN, a novel approximate and fast Newton method. SPAN computes the inverse of the Hessian matrix via low-rank approximation and stochastic Hessian-vector products. Our experiments on multiple benchmark datasets demonstrate that SPAN outperforms existing first-order and second-order optimization methods in terms of the convergence wall-clock time. Furthermore, we provide a theoretical analysis of the per-iteration complexity, the approximation error, and the convergence rate. Both the theoretical analysis and experimental results show that our proposed method achieves a better trade-off between the convergence rate and the per-iteration efficiency.},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={34},
-  number={02},
-  pages={1520--1527},
-  year={2020},
-  html={https://ojs.aaai.org/index.php/AAAI/article/view/5511},
-  selected={true}
-}
 
-@inproceedings{huang2021acmo,
-  abbr={AAAI},
-  bibtex_show={true},
-  title={ACMo: Angle-Calibrated Moment Methods for Stochastic Optimization},
-  author={Huang, Xunpeng and Xu, Runxin and Zhou, Hao and Wang, Zhe and Liu, Zhengyang and Li, Lei},
-  abstract={Stochastic gradient descent (SGD) is a widely used method for its outstanding generalization ability and simplicity. Adaptive gradient methods have been proposed to further accelerate the optimization process. In this paper, we revisit existing adaptive gradient optimization methods with a new interpretation. Such new perspective leads to a refreshed understanding of the roles of second moments in stochastic optimization. Based on this, we propose Angle-Calibration Moment method (ACMo), a novel stochastic optimization method. It enjoys the benefits of second moments with only first moment updates. Theoretical analysis shows that ACMo is able to achieve the same convergence rate as mainstream adaptive methods. Experiments on a variety of CV and NLP tasks demonstrate that ACMo has a comparable convergence to state-of-the-art Adam-type optimizers, and even a better generalization performance in most cases. The code is available at https://github.com/Xunpeng746/ACMo.},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={35},
-  number={9},
-  pages={7857--7864},
-  year={2021},
-  html={https://ojs.aaai.org/index.php/AAAI/article/view/16959},
-  selected={true}
-}
+
+
