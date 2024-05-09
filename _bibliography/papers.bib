@@ -3,21 +3,38 @@
 
 @string{aps = {American Physical Society,}}
 
-@misc{huang2024faster,
+@inproceedings{huang2024faster,
+      abbr={COLT},
+      bibtex_show={true},
       title={Faster Sampling without Isoperimetry via Diffusion-based Monte Carlo}, 
       author={Xunpeng Huang and Difan Zou and Hanze Dong and Yian Ma and Tong Zhang},
+      abstract={To sample from a general target distribution p∗∝e−f∗ beyond the isoperimetric condition, Huang et al. (2023) proposed to perform sampling through reverse diffusion, giving rise to Diffusion-based Monte Carlo (DMC). Specifically, DMC follows the reverse SDE of a diffusion process that transforms the target distribution to the standard Gaussian, utilizing a non-parametric score estimation. However, the original DMC algorithm encountered high gradient complexity, resulting in an exponential dependency on the error tolerance ϵ of the obtained samples. In this paper, we demonstrate that the high complexity of DMC originates from its redundant design of score estimation, and proposed a more efficient algorithm, called RS-DMC, based on a novel recursive score estimation method. In particular, we first divide the entire diffusion process into multiple segments and then formulate the score estimation step (at any time step) as a series of interconnected mean estimation and sampling subproblems accordingly, which are correlated in a recursive manner. Importantly, we show that with a proper design of the segment decomposition, all sampling subproblems will only need to tackle a strongly log-concave distribution, which can be very efficient to solve using the Langevin-based samplers with a provably rapid convergence rate. As a result, we prove that the gradient complexity of RS-DMC only has a quasi-polynomial dependency on ϵ, which significantly improves exponential gradient complexity in Huang et al. (2023). Furthermore, under commonly used dissipative conditions, our algorithm is provably much faster than the popular Langevin-based algorithms. Our algorithm design and theoretical framework illuminate a novel direction for addressing sampling problems, which could be of broader applicability in the community.},
+      booktitle={Conference on Learning Theory (COLT)},
       year={2024},
-      eprint={2401.06325},
-      archivePrefix={arXiv},
-      primaryClass={stat.ML}
+      html={https://arxiv.org/abs/2401.06325},
+      selected={true}
 }
+
+@inproceedings{huang2024sps,
+      abbr={ICML},
+      bibtex_show={true},
+      title={Faster Sampling via Stochastic Gradient Proximal Sampler}, 
+      author={Xunpeng Huang and Difan Zou and Yian Ma and Hanze Dong and Tong Zhang},
+      abstract={Stochastic gradients have been widely integrated into Langevin-based methods to improve their scalability and efficiency in solving large-scale sampling problems. However, the proximal sampler, which exhibits much faster convergence than Langevin-based algorithms in the deterministic setting ~\cite{lee2021structured}, has yet to be explored in its stochastic variants. In this paper, we study the Stochastic Proximal Samplers (SPS) for sampling from non-log-concave distributions. We first establish a general framework for implementing stochastic proximal samplers and establish the convergence theory accordingly. We show that the convergence to the target distribution can be guaranteed as long as the second moment of the algorithm trajectory is bounded and restricted Gaussian oracles can be well approximated. We then provide two implementable variants based on Stochastic gradient Langevin dynamics (SGLD) and Metropolis-adjusted Langevin algorithm (MALA), giving rise to SPS-SGLD and SPS-MALA. We further show that SPS-SGLD and SPS-MALA can achieve $\epsilon$-sampling error in total variation (TV) distance within $\tilde{\mathcal{O}}(d\epsilon^{-2})$ and $\tilde{\mathcal{O}}(d^{1/2}\epsilon^{-2})$ gradient complexities, which outperform the best-known result by at least an $\tilde{\mathcal{O}}(d^{1/3})$ factor. This enhancement in performance is corroborated by our empirical studies on synthetic data with various dimensions, demonstrating the efficiency of our proposed algorithm.},
+      booktitle={International Conference on Machine Learning (ICML)},
+      year={2024},
+      selected={true}
+}
+
+
 
 @inproceedings{huang2024reverse,
   abbr={ICLR},
   bibtex_show={true},
   title={Reverse Diffusion Monte Carlo},
-  author={Xunpeng Huang, Hanze Dong, Yifan HAO, Yian Ma, Tong Zhang},
+  author={Xunpeng Huang and Hanze Dong and Yifan HAO and Yian Ma and Tong Zhang},
   abstract={The efficacy of modern generative models is commonly contingent upon the precision of score estimation along the diffusion path, with a focus on diffusion models and their ability to generate high-quality data samples. This study delves into the application of reverse diffusion to Monte Carlo sampling. It is shown that score estimation can be transformed into a mean estimation problem via the decomposition of the transition kernel. By estimating the mean of the posterior distribution, we derive a novel Monte Carlo sampling algorithm from the reverse diffusion process, which is distinct from traditional Markov Chain Monte Carlo (MCMC) methods. We calculate the error requirements and sample size for the posterior distribution, and use the result to derive an algorithm that can approximate the target distribution to any desired accuracy. Additionally, by estimating the log-Sobolev constant of the posterior distribution, we show under suitable conditions the problem of sampling from the posterior can be easier than direct sampling from the target distribution using traditional MCMC techniques. For Gaussian mixture models, we demonstrate that the new algorithm achieves significant improvement over the traditional Langevin-style MCMC sampling methods both theoretically and practically. Our algorithm offers a new perspective and solution beyond classical MCMC algorithms for challenging complex distributions.},
+  booktitle={International Conference on Learning Representations (ICLR)},
   year={2024},
   html={https://openreview.net/forum?id=kIPEyMSdFV},
   selected={true}
@@ -84,8 +101,7 @@
   booktitle={IJCAI},
   pages={1901--1908},
   year={2017},
-  html={https://www.ijcai.org/proceedings/2017/0264.pdf},
-  selected={true}
+  html={https://www.ijcai.org/proceedings/2017/0264.pdf}
 }
 
 @inproceedings{guo2018enhancing,
