@@ -3,6 +3,40 @@
 
 @string{aps = {American Physical Society,}}
 
+@article{huang2026almost,
+    abbr={COLT},
+    bibtex_show={true},
+    title={Almost linear convergence under minimal score assumptions: Quantized transition diffusion},
+    author={Xunpeng Huang and Yingyu Lin and Nikki Lijing Kuang and Hanze Dong and Difan Zou and Yian Ma and Tong Zhang},
+    abstract={Continuous diffusion models have demonstrated remarkable generative performance across diverse domains but are often constrained by the computational cost of simulating reverse Ornstein--Uhlenbeck processes via SDE/ODE solvers. Existing theoretical results typically establish query complexities that scale polynomially with both the dimension $d$ and the error tolerance $\epsilon$ (e.g., $\tilde{\mathcal{O}}(d/\epsilon)$). This mirrors the limitations of unadjusted Langevin algorithm, where standard first-order score solvers lack access to zeroth-order density information, precluding natural error-correction mechanisms and thus preventing the fast $\ln(1/\epsilon)$ convergence attainable by Metropolis-adjusted methods. In this paper, we develop an improved generative modeling method by introducing \ourmethod\ (Quantized Transition Diffusion), a framework that reformulates continuous diffusion into a discrete generation problem through spatial quantization and the parameterization of zeroth-order information (e.g., density ratios). To sample from this discrete target, we propose a truncated uniformization algorithm that simulates the underlying continuous-time Markov chain of the discrete diffusion process without discretization error, while eliminating the restrictive bounded-score assumption required by prior uniformization-based approaches. Consequently, \ourmethod\ attains $\epsilon$-accuracy in total variation distance with a query complexity of $\mathcal{O}(d \ln^2(d/\epsilon))$, yielding a notable improvement in $\epsilon$-dependence compared to existing continuous diffusion samplers. Crucially, our analysis capitalizes on a novel proof technique based on the infinitesimal chain rule of KL divergence, providing a fresh perspective on unifying continuous and discrete diffusion paradigms.},
+    journal={Annual Conference on Learning Theory (COLT)},
+    year={2026},
+    html={https://arxiv.org/pdf/2505.21892},
+    selected={true}
+}
+
+@article{huang2025complexity,
+    abbr={arXiv},
+    bibtex_show={true},
+    title={On the Complexity Theory of Masked Discrete Diffusion: From $$\backslash$mathrm $\{$poly$\}$(1/$\backslash$epsilon) $ to Nearly $$\backslash$epsilon $-Free},
+    author={Xunpeng Huang and Yingyu Lin and Nishant Jain and Kaibo Wang and Difan Zou and Yian Ma and Tong Zhang},
+    abstract={We study \emph{absorbing discrete diffusion}, a flexible paradigm for high-dimensional data generation where elements are progressively corrupted to an absorbing mask state before being denoised. Despite its empirical success, the theoretical complexity of this approach in high dimensions remains insufficiently understood. Existing analyses largely focus on \emph{uniform} discrete diffusion, and more recent attempts addressing absorbing diffusion either (1) overlook widely used Euler samplers, (2) impose restrictive bounded-score assumptions, or (3) fail to showcase the advantages of absorbing discrete diffusion over its uniform counterpart. To bridge this gap, we provide the first rigorous analysis of typical Euler samplers for absorbing discrete diffusion, establishing an $\epsilon$-accuracy in total variation (TV) distance with $\tilde{O}(d^{2}\epsilon^{-3/2})$ discrete score evaluations. Furthermore, we introduce \emph{Mask-Aware Truncated Uniformization} (\ourmethod), a technique that eliminates bounded-score assumptions while preserving unbiased score approximations. By exploiting the structural property that tokens are unmasked at most once, \ourmethod\ achieves an $\epsilon$-free complexity of $O(d \ln d)$. This result strictly improves upon existing uniformization-based inference for uniform diffusion by removing the $\ln(1/\epsilon)$ factor, offering a substantial convergence speedup. Our findings not only provide a solid theoretical foundation for absorbing discrete diffusion, confirming its advantage over uniform diffusion for high-dimensional generation, but also pave the way for future analysis of diffusion-based language models under the masking paradigm.},
+    journal={arXiv preprint arXiv:2509.21835},
+    year={2025},
+    html={https://arxiv.org/abs/2509.21835},
+}
+
+@inproceedings{liu2025makes,
+    abbr={ICML},
+    bibtex_show={true},
+    title={What makes in-context learning effective for mathematical reasoning},
+    author={Jiayu Liu and Zhenya Huang and Chaokun Wang and Xunpeng Huang and ChengXiang Zhai and Enhong Chen},
+    abstract={Owing to the capability of in-context learning, large language models (LLMs) have shown impressive performance across diverse mathematical reasoning benchmarks. However, we find that few-shot demonstrations can sometimes bring negative performance and their effectiveness on LLMs' reasoning abilities remains unreliable. To this end, in this paper, we aim to theoretically analyze the impact of in-context demonstrations on LLMs' reasoning performance. We prove that the reasoning efficacy (measured by empirical prediction loss) can be bounded by an \emph{LLM-oriented semantic similarity} and an \emph{inference stability of demonstrations}, which is general for both one-shot and few-shot scenarios. Based on this finding, we propose a straightforward, generalizable, and low-complexity demonstration selection method named LMS3. It facilitates to select the most pertinent samples for different LLMs and includes a novel demonstration rejection mechanism to automatically filter out samples that are unsuitable for few-shot learning. Through experiments on three representative benchmarks, two LLM backbones, and multiple few-shot settings, we verify that our LMS3 has superiority and achieves consistent improvements on all datasets, which existing methods have been unable to accomplish. Our code is available at \url{https://github.com/Ljyustc/LMS3}.},
+    booktitle={Forty-second International Conference on Machine Learning},
+    year={2025},
+    html={https://openreview.net/forum?id=upSPbQoViI},
+}
+
 @inproceedings{huang2024reverse,
       abbr={NeurIPS},
       bibtex_show={true},
@@ -21,7 +55,7 @@
       title={Faster Sampling without Isoperimetry via Diffusion-based Monte Carlo}, 
       author={Xunpeng Huang and Difan Zou and Hanze Dong and Yian Ma and Tong Zhang},
       abstract={To sample from a general target distribution p∗∝e−f∗ beyond the isoperimetric condition, Huang et al. (2023) proposed to perform sampling through reverse diffusion, giving rise to Diffusion-based Monte Carlo (DMC). Specifically, DMC follows the reverse SDE of a diffusion process that transforms the target distribution to the standard Gaussian, utilizing a non-parametric score estimation. However, the original DMC algorithm encountered high gradient complexity, resulting in an exponential dependency on the error tolerance ϵ of the obtained samples. In this paper, we demonstrate that the high complexity of DMC originates from its redundant design of score estimation, and proposed a more efficient algorithm, called RS-DMC, based on a novel recursive score estimation method. In particular, we first divide the entire diffusion process into multiple segments and then formulate the score estimation step (at any time step) as a series of interconnected mean estimation and sampling subproblems accordingly, which are correlated in a recursive manner. Importantly, we show that with a proper design of the segment decomposition, all sampling subproblems will only need to tackle a strongly log-concave distribution, which can be very efficient to solve using the Langevin-based samplers with a provably rapid convergence rate. As a result, we prove that the gradient complexity of RS-DMC only has a quasi-polynomial dependency on ϵ, which significantly improves exponential gradient complexity in Huang et al. (2023). Furthermore, under commonly used dissipative conditions, our algorithm is provably much faster than the popular Langevin-based algorithms. Our algorithm design and theoretical framework illuminate a novel direction for addressing sampling problems, which could be of broader applicability in the community.},
-      booktitle={Conference on Learning Theory (COLT)},
+      booktitle={Annual Conference on Learning Theory (COLT)},
       year={2024},
       html={https://arxiv.org/abs/2401.06325},
       selected={true}
@@ -35,6 +69,7 @@
       abstract={Stochastic gradients have been widely integrated into Langevin-based methods to improve their scalability and efficiency in solving large-scale sampling problems. However, the proximal sampler, which exhibits much faster convergence than Langevin-based algorithms in the deterministic setting ~\cite{lee2021structured}, has yet to be explored in its stochastic variants. In this paper, we study the Stochastic Proximal Samplers (SPS) for sampling from non-log-concave distributions. We first establish a general framework for implementing stochastic proximal samplers and establish the convergence theory accordingly. We show that the convergence to the target distribution can be guaranteed as long as the second moment of the algorithm trajectory is bounded and restricted Gaussian oracles can be well approximated. We then provide two implementable variants based on Stochastic gradient Langevin dynamics (SGLD) and Metropolis-adjusted Langevin algorithm (MALA), giving rise to SPS-SGLD and SPS-MALA. We further show that SPS-SGLD and SPS-MALA can achieve $\epsilon$-sampling error in total variation (TV) distance within $\tilde{\mathcal{O}}(d\epsilon^{-2})$ and $\tilde{\mathcal{O}}(d^{1/2}\epsilon^{-2})$ gradient complexities, which outperform the best-known result by at least an $\tilde{\mathcal{O}}(d^{1/3})$ factor. This enhancement in performance is corroborated by our empirical studies on synthetic data with various dimensions, demonstrating the efficiency of our proposed algorithm.},
       booktitle={International Conference on Machine Learning (ICML)},
       year={2024},
+      html={https://proceedings.mlr.press/v235/huang24aj.html},
       selected={true}
 }
 
