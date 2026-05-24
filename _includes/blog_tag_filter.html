@@ -1,0 +1,13 @@
+{% assign all_tags = site.posts | map: "tags" | join: "," | split: "," | uniq | sort %}
+{% if all_tags.size > 0 %}
+<div class="blog-tag-filter">
+  <a href="{{ '/blog/' | relative_url }}" class="tag-btn {% unless page.url contains '/tag/' %}active{% endunless %}">All</a>
+  {% for tag in all_tags %}
+    {% assign tag_stripped = tag | strip %}
+    {% if tag_stripped != "" %}
+      {% capture tag_url %}{{ '/blog/tag/' | append: tag_stripped | relative_url }}{% endcapture %}
+      <a href="{{ tag_url }}" class="tag-btn {% if page.url contains tag_stripped %}active{% endif %}">{{ tag_stripped }}</a>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}

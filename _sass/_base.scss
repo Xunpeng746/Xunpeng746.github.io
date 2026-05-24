@@ -301,10 +301,136 @@ footer.sticky-bottom {
   border-bottom: 1px solid $grey-color-light;
   text-align: center;
   padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-bottom: 1.5rem;
   h1 {
     color: var(--global-theme-color);
     font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.post-tag {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: 20px;
+  border: 1px solid var(--global-theme-color);
+  font-size: 0.75rem;
+  color: var(--global-theme-color);
+  margin-left: 0.25rem;
+  vertical-align: middle;
+
+  &--type {
+    background-color: var(--global-theme-color);
+    color: var(--global-bg-color);
+  }
+}
+
+.tag-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--global-text-color-light);
+  padding: 0.25rem 1rem 0.1rem;
+}
+
+.blog-tag-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 4.5rem 0 0.5rem;
+
+  .tag-active-summary {
+    font-size: 0.8rem;
+    color: var(--global-theme-color);
+    font-style: italic;
+  }
+}
+
+.tag-dropdown {
+  position: relative;
+  display: inline-block;
+
+  .tag-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    border: 1px solid $grey-color-light;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.15s;
+
+    &:hover, &.open {
+      border-color: var(--global-theme-color);
+      color: var(--global-theme-color);
+    }
+
+    .tag-dropdown-arrow {
+      font-size: 0.6rem;
+      transition: transform 0.2s;
+    }
+
+    &.open .tag-dropdown-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  .tag-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 180px;
+    background: var(--global-bg-color);
+    border: 1px solid $grey-color-light;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    z-index: 100;
+    padding: 0.5rem 0;
+
+    &.open { display: block; }
+
+    .tag-checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      font-size: 0.875rem;
+      color: var(--global-text-color);
+      cursor: pointer;
+      margin: 0;
+      font-weight: normal;
+
+      &:hover { color: var(--global-theme-color); }
+
+      input[type="checkbox"] {
+        accent-color: var(--global-theme-color);
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    .tag-dropdown-footer {
+      border-top: 1px solid $grey-color-light;
+      margin-top: 0.4rem;
+      padding: 0.4rem 1rem 0;
+
+      button {
+        background: none;
+        border: none;
+        font-size: 0.8rem;
+        color: var(--global-text-color-light);
+        cursor: pointer;
+        padding: 0;
+
+        &:hover { color: var(--global-theme-color); }
+      }
+    }
   }
 }
 

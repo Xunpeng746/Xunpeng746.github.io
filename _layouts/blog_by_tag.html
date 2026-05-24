@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="post">
+
+  <div class="header-bar">
+    <h1>{{ site.blog_name }}</h1>
+  </div>
+
+  {% include blog_tag_filter.html %}
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      {% assign words = post.content | number_of_words %}
+      {% assign reading_time = words | divided_by: 200 %}
+      {% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+      <li>
+        <h3><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+        <p>{{ post.description }}</p>
+        <p class="post-meta">{{ reading_time }} min read &nbsp;·&nbsp; {{ post.date | date: '%B %-d, %Y' }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% include pagination.html %}
+
+</div>

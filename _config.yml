@@ -84,6 +84,15 @@ blog_name: MCMC Sampling and Diffusion Notes
 pagination:
   enabled: true
 
+# Tag autopages
+autopages:
+  enabled: true
+  tags:
+    enabled: true
+    layouts:
+      - "blog_by_tag.html"
+    permalink: "/blog/tag/:tag/"
+
 # Comments
 disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
