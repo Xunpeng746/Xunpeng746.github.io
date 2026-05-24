@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: Ph.D. student of <a href="https://hkust.edu.hk/">HKUST</a>
+description: Short-Term Postdoc at <a href="https://ucsd.edu/">UCSD</a>
 profile:
   align: left
   image: 2026_xunpeng.jpg
@@ -16,8 +16,9 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a final-year Ph.D. student at [HKUST](https://hkust.edu.hk/), co-advised by [Prof. Tong Zhang](http://tongzhang-ml.org/) and [Prof. Yang Xiang](https://www.math.hkust.edu.hk/~maxiang/).
-I am furtunate work closely with [Prof. Yi-an Ma](https://sites.google.com/view/yianma/home) (University of California San Diego) and [Prof. Difan Zou](https://difanzou.github.io/) (The University of Hong Kong).
-Before that, I got my M.sc. degree in School of Computer Science and Technology from [University of Science and Technology of China](https://www.ustc.edu.cn/) supervised by [Prof. Enhong Chen](http://staff.ustc.edu.cn/~cheneh/).
-Besides, I used to work at [Bytedance AI Lab](https://ailab.bytedance.com/) under [Prof. Lei Li](https://sites.cs.ucsb.edu/~lilei/)'s supervision.
-My current research interests are machine learning algorithms and theory including sampling algorithms, stochastic/nonconvex optimization and mean-field analysis.
+
+**I am currently a short-term postdoctoral researcher at the [University of California San Diego](https://ucsd.edu), working with [Prof. Yian Ma](https://sites.google.com/view/yianma/home). In Fall 2026, I will join the [School of Mathematics](https://math.gatech.edu/) at the [Georgia Institute of Technology](https://www.gatech.edu/) as a Visiting Assistant Professor (non-tenure track).**
+
+I received my Ph.D. from [HKUST](https://hkust.edu.hk/) in 2026, where I was fortunate to be co-advised by [Prof. Tong Zhang](http://tongzhang-ml.org/) and [Prof. Yang Xiang](https://www.math.hkust.edu.hk/~maxiang/). I also collaborate closely with [Prof. Difan Zou](https://difanzou.github.io/) at The University of Hong Kong. Prior to that, I earned my M.Sc. degree from the School of Computer Science and Technology at the [University of Science and Technology of China](https://www.ustc.edu.cn/), under the supervision of [Prof. Enhong Chen](http://staff.ustc.edu.cn/~cheneh/). I have also worked at [ByteDance AI Lab](https://ailab.bytedance.com/), advised by [Prof. Lei Li](https://www.cs.cmu.edu/~leili/).
+
+My research interests lie in machine learning algorithms and theory, with a particular focus on **MCMC sampling algorithms**, **diffusion inference and modeling**, optimization, and mean-field analysis.

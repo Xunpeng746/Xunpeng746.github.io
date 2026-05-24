@@ -68,6 +68,15 @@ blockquote {
       font-family: monospace;
       font-size: 0.85rem;
     }
+    .social {
+      text-align: center;
+      margin-top: 0.75rem;
+      .contact-icons {
+        font-size: 2.8rem;
+        line-height: 1;
+      }
+      .contact-note { margin: 0; font-size: 0.75rem; }
+    }
   }
 
   .intro-col {
@@ -78,18 +87,6 @@ blockquote {
     > div:first-child {
       flex: 1;
       p:last-child { margin-bottom: 0; }
-    }
-
-    .social {
-      text-align: left;
-      margin-top: 1rem;
-      margin-bottom: 0;
-      padding-bottom: 0;
-      .contact-icons {
-        font-size: 2.8rem;
-        line-height: 1;
-      }
-      .contact-note { margin: 0; }
     }
   }
 }
