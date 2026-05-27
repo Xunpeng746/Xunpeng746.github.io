@@ -11,7 +11,7 @@
   Xunpeng Huang
 
 
-  | blog
+  | Posts tagged with mcmc
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -43,7 +43,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/tag/mcmc/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -111,12 +111,12 @@
             <a class="nav-link" href="/blog/">
               blog
               
-              <span class="sr-only">(current)</span>
-              
             </a>
           </li>
           
           <!-- Other pages -->
+          
+          
           
           
           
@@ -192,217 +192,40 @@
 
   <div class="header-bar">
     <h1>MCMC Sampling and Diffusion Notes</h1>
-
-    
-    
-    
-    
-    <div class="blog-tag-filter">
-      
-      <div class="tag-dropdown" id="type-dropdown">
-        <button class="tag-dropdown-toggle" id="type-dropdown-toggle">
-          <span id="type-dropdown-label">Note Type</span>
-          <span class="tag-dropdown-arrow">&#9660;</span>
-        </button>
-        <div class="tag-dropdown-menu" id="type-dropdown-menu">
-          
-            <label class="tag-checkbox-item">
-              <input type="checkbox" data-group="type" value="Reading Note"> Reading Note
-            </label>
-          
-            <label class="tag-checkbox-item">
-              <input type="checkbox" data-group="type" value="Blog Template"> Blog Template
-            </label>
-          
-          <div class="tag-dropdown-footer">
-            <button class="tag-clear-btn" data-target="type">Clear</button>
-          </div>
-        </div>
-      </div>
-      
-
-      
-      
-      
-      <div class="tag-dropdown" id="topic-dropdown">
-        <button class="tag-dropdown-toggle" id="topic-dropdown-toggle">
-          <span id="topic-dropdown-label">Topic</span>
-          <span class="tag-dropdown-arrow">&#9660;</span>
-        </button>
-        <div class="tag-dropdown-menu" id="topic-dropdown-menu">
-          
-            <label class="tag-checkbox-item">
-              <input type="checkbox" data-group="topic" value="MCMC"> MCMC
-            </label>
-          
-          <div class="tag-dropdown-footer">
-            <button class="tag-clear-btn" data-target="topic">Clear</button>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-    
   </div>
 
-  <ul class="post-list" id="post-list">
+  
+
+<div class="blog-tag-filter">
+  <a href="/blog/" class="tag-btn ">All</a>
+  
+    
+    
+      
+      <a href="/blog/tag/MCMC" class="tag-btn ">MCMC</a>
+    
+  
+</div>
+
+
+
+  <ul class="post-list">
     
       
       
       
-      
-      
-      <li data-tags="MCMC" data-type="Reading Note">
+      <li>
         <h3><a class="post-title" href="/2026/05/24/first-order-rejection-sampling.html">First Order Rejection Sampling</a></h3>
         <p>An introduction to first-order rejection sampling and its connections to diffusion-based generative models</p>
-        <p class="post-meta">
-          1 min read &nbsp;·&nbsp; May 24, 2026
-          
-          &nbsp;·&nbsp;<span class="post-tag post-tag--type">Reading Note</span>
-          
-          <span class="post-tag">MCMC</span>
-        </p>
-      </li>
-    
-      
-      
-      
-      
-      
-      <li data-tags="" data-type="Blog Template">
-        <h3><a class="post-title" href="/2021/05/22/distill.html">a distill-style blog post</a></h3>
-        <p>an example of a distill-style blog post and main elements</p>
-        <p class="post-meta">
-          6 min read &nbsp;·&nbsp; May 22, 2021
-          
-          &nbsp;·&nbsp;<span class="post-tag post-tag--type">Blog Template</span>
-          
-          
-        </p>
+        <p class="post-meta">1 min read &nbsp;·&nbsp; May 24, 2026</p>
       </li>
     
   </ul>
 
-  <div id="blog-pagination" class="blog-pagination"></div>
+  
+
 
 </div>
-
-<script>
-(function () {
-  var PER_PAGE = 5;
-  var activeTypes = new Set();
-  var activeTopics = new Set();
-  var currentPage = 1;
-
-  var allItems = Array.from(document.querySelectorAll("#post-list li"));
-  var paginationEl = document.getElementById("blog-pagination");
-  var dropdowns = [
-    { toggleId: "type-dropdown-toggle", menuId: "type-dropdown-menu", labelId: "type-dropdown-label", defaultLabel: "Note Type", group: "type", activeSet: activeTypes },
-    { toggleId: "topic-dropdown-toggle", menuId: "topic-dropdown-menu", labelId: "topic-dropdown-label", defaultLabel: "Topic", group: "topic", activeSet: activeTopics }
-  ].map(function (d) {
-    d.toggle = document.getElementById(d.toggleId);
-    d.menu = document.getElementById(d.menuId);
-    d.label = document.getElementById(d.labelId);
-    return d;
-  }).filter(function (d) { return d.toggle && d.menu; });
-
-  dropdowns.forEach(function (d) {
-    d.toggle.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var isOpen = d.menu.classList.contains("open");
-      // close all
-      dropdowns.forEach(function (x) { x.menu.classList.remove("open"); x.toggle.classList.remove("open"); });
-      if (!isOpen) { d.menu.classList.add("open"); d.toggle.classList.add("open"); }
-    });
-
-    d.menu.querySelectorAll("input[type=checkbox]").forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        if (this.checked) d.activeSet.add(this.value);
-        else d.activeSet.delete(this.value);
-        currentPage = 1;
-        updateLabels();
-        render();
-      });
-    });
-  });
-
-  document.addEventListener("click", function (e) {
-    dropdowns.forEach(function (d) {
-      if (!d.menu.contains(e.target) && e.target !== d.toggle) {
-        d.menu.classList.remove("open");
-        d.toggle.classList.remove("open");
-      }
-    });
-  });
-
-  document.querySelectorAll(".tag-clear-btn").forEach(function (btn) {
-    btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      var target = this.dataset.target;
-      var d = dropdowns.find(function (x) { return x.group === target; });
-      if (!d) return;
-      d.activeSet.clear();
-      d.menu.querySelectorAll("input[type=checkbox]").forEach(function (cb) { cb.checked = false; });
-      currentPage = 1;
-      updateLabels();
-      render();
-    });
-  });
-
-  function updateLabels() {
-    dropdowns.forEach(function (d) {
-      d.label.textContent = d.activeSet.size > 0
-        ? d.defaultLabel + " (" + d.activeSet.size + ")"
-        : d.defaultLabel;
-    });
-  }
-
-  function getVisible() {
-    return allItems.filter(function (li) {
-      var tags = li.dataset.tags ? li.dataset.tags.split(",").map(function (t) { return t.trim(); }) : [];
-      var type = (li.dataset.type || "").trim();
-      if (activeTypes.size > 0 && !activeTypes.has(type)) return false;
-      if (activeTopics.size > 0 && !Array.from(activeTopics).every(function (t) { return tags.includes(t); })) return false;
-      return true;
-    });
-  }
-
-  function render() {
-    var visible = getVisible();
-    var totalPages = Math.max(1, Math.ceil(visible.length / PER_PAGE));
-    if (currentPage > totalPages) currentPage = 1;
-    var start = (currentPage - 1) * PER_PAGE;
-    allItems.forEach(function (li) { li.style.display = "none"; });
-    visible.slice(start, start + PER_PAGE).forEach(function (li) { li.style.display = ""; });
-    renderPagination(totalPages);
-  }
-
-  function renderPagination(totalPages) {
-    if (totalPages <= 1) { paginationEl.innerHTML = ""; return; }
-    var html = '<ul class="pagination">';
-    html += '<li class="page-item' + (currentPage === 1 ? " disabled" : "") + '"><a class="page-link" href="#" data-page="' + (currentPage - 1) + '">&laquo;</a></li>';
-    for (var i = 1; i <= totalPages; i++) {
-      html += '<li class="page-item' + (i === currentPage ? " active" : "") + '"><a class="page-link" href="#" data-page="' + i + '">' + i + '</a></li>';
-    }
-    html += '<li class="page-item' + (currentPage === totalPages ? " disabled" : "") + '"><a class="page-link" href="#" data-page="' + (currentPage + 1) + '">&raquo;</a></li>';
-    html += '</ul>';
-    paginationEl.innerHTML = html;
-    paginationEl.querySelectorAll("a[data-page]").forEach(function (a) {
-      a.addEventListener("click", function (e) {
-        e.preventDefault();
-        var p = parseInt(this.dataset.page);
-        var total = Math.max(1, Math.ceil(getVisible().length / PER_PAGE));
-        if (p < 1 || p > total) return;
-        currentPage = p;
-        render();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    });
-  }
-
-  render();
-})();
-</script>
 
     </div>
 
