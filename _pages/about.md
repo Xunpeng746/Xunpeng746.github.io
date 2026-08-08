@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: Short-Term Postdoc at <a href="https://ucsd.edu/">UCSD</a>
+description: Postdoc at <a href="https://ucsd.edu/">UCSD</a>
 profile:
   align: left
   image: 2026_xunpeng.jpg
